@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart';
+//import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
@@ -72,7 +72,20 @@ class _Home extends State {
                   Text(
                     'メモ',
                     style: TextStyle(fontSize: 20),
-                  )
+                  ),
+                  Container(
+                    width: 310,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: '未入力',
+                        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
