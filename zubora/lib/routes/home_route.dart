@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -31,6 +33,16 @@ class _Home extends State {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
+                    '日付',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.chevron_left),
+                    onPressed: previousday,
+                    color: Colors.black,
+                    highlightColor: Theme.of(context).primaryColor,
+                  ),
+                  Text(
                     format.format(_date),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -38,14 +50,44 @@ class _Home extends State {
                       color: Theme.of(context).primaryColor,
                     ),
                   ),
-                  RaisedButton(
-                    child: Text(
-                      '日付を設定',
-                      style: TextStyle(fontSize: 16.0),
-                    ),
-                    onPressed: onPressed,
-                    color: Colors.white70,
+                  IconButton(
+                    icon: Icon(Icons.chevron_right),
+                    onPressed: nextday,
+                    color: Colors.black,
                     highlightColor: Theme.of(context).primaryColor,
+                  ),
+                  IconButton(
+                      icon: Icon(Icons.calendar_today),
+                      onPressed: onPressed,
+                      color: Colors.black,
+                      highlightColor: Theme.of(context).primaryColor),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20, top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'メモ',
+                    style: TextStyle(fontSize: 20),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20, top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '支出',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Text(
+                    '円',
+                    style: TextStyle(fontSize: 20),
                   ),
                 ],
               ),
@@ -75,4 +117,8 @@ class _Home extends State {
       });
     }
   }
+
+  void nextday() async {}
+
+  void previousday() async {}
 }
