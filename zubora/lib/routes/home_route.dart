@@ -98,6 +98,19 @@ class _Home extends State {
                     '支出',
                     style: TextStyle(fontSize: 20),
                   ),
+                  Container(
+                    width: 250,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: '0',
+                        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      ),
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
                   Text(
                     '円',
                     style: TextStyle(fontSize: 20),
